@@ -1,0 +1,20 @@
+include program-data.pug
+
+section.program
+    .program__img 
+        +webp(['program/1'], 'png')
+    .l-default 
+        .program__info
+            h3.program__title.title.title--h3 Программа
+            .program__items
+                each program_item in program_items
+                    .program__item.dropdown
+                        .program__item-top.dropdown-top
+                            .program__item-icon
+                                img(src="img/svg/program/" + program_item.icon + ".svg", alt="")
+                            .program__item-title= program_item.title
+                            .program__item-arrow.dropdown-arrow 
+                                +svgMono('arrow')
+                        ul.program__item-list.dropdown-body
+                            each program_li in program_item.list
+                                li.program__item-li= program_li

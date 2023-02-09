@@ -1,0 +1,144 @@
+.program {
+    position: relative;
+    padding-top: 122px;
+    padding-bottom: 68px;
+
+    @media screen and (max-width: 1199px) {
+        padding-top: 0;
+        padding-bottom: 75px;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: -20%;
+        z-index: -1;
+
+        @media screen and (max-width: 1599px) {
+            right: -45%;
+        }
+
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+
+    &__info {
+        max-width: 851px;
+    }
+
+    &__title {
+        margin-bottom: 77px;
+
+        @media screen and (max-width: 1199px) {
+            margin-bottom: 35px;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 77px;
+
+            @media screen and (max-width: 1199px) {
+                margin-bottom: 30px;
+            }
+        }
+
+        &-top {
+            display: flex;
+            align-items: center;
+        }
+
+        &-icon {
+            width: 69px;
+            min-width: 69px;
+            margin-right: 20px;
+
+            @media screen and (max-width: 1199px) {
+                width: 32px;
+                min-width: 32px;
+                margin-right: 13px;
+            }
+        }
+
+        &-title {
+            font-size: 37px;
+            line-height: 120%;
+            font-weight: 600;
+
+            @media screen and (max-width: 1199px) {
+                font-size: 24px;
+            }
+
+            @media screen and (max-width: 600px) {
+                margin-right: 13px;
+            }
+        }
+
+        &-arrow {
+            display: none;
+            align-items: center;
+            font-size: 24px;
+            margin-left: auto;
+            
+            @media screen and (max-width: 600px) {
+                display: block;
+                font-size: 13px;
+            }
+        }
+
+        &-li {
+            font-size: 20px;
+            line-height: 140%;
+            margin-bottom: 20px;
+
+            @media screen and (max-width: 1199px) {
+                font-size: 17px;
+                line-height: 120%;
+                margin-bottom: 16px;
+            }
+        }
+
+        &-list {
+            @media screen and (max-width: 1199px) {
+                padding-left: 20px;
+            }
+        }
+    }
+
+    .dropdown {
+        &-body {
+            @include tr('all');
+            padding-top: 22px;
+            
+            @media screen and (max-width: 1199px) {
+                padding-top: 0;
+            }
+
+            @media screen and (max-width: 600px) {
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+        }
+
+        &-arrow {
+            @include tr('all');
+        }
+
+        &.open {
+            .dropdown {
+                &-body {
+                    max-height: max-content;
+                    transition: all .4s ease-in-out;
+                    padding-top: 16px;
+                    opacity: 1;
+                }
+
+                &-arrow {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}
